@@ -16,7 +16,8 @@ mysql =MySQL(app)
 @app.route('/createthemaindatabase', methods=['GET','POST'] )
 def createthemaindatabase():
     cur = mysql.connection.cursor()
-    cur.execute('''create table cigarreviews(
+    cur.execute('''
+    create table cigarreviews(
     names varchar(255),
     brands varchar(255),
     wrapper varchar(255),
@@ -27,16 +28,24 @@ def createthemaindatabase():
     strengths varchar(255),
     descriptions longtext not null
     );''')
+
     mysql.connection.commit()
     cur.close()
 
-@app.route('/',methods=['GET','POST'])
+@app.route('/', methods = ['GET', 'POST'])
+def homepage():
+    return render_template("homepage.html")
+
+
+@app.route('/review',methods=['GET','POST'])
 def render_submit_template():
     return render_template('submitreview.html')
+
 
 @app.route('/added', methods=['GET','POST'])
 def added():
     return "review added"
+
 @app.route("/adding_error",  methods=['GET','POST'])
 def adding_error():
     return "error adding review"
