@@ -34,6 +34,7 @@ def createthemaindatabase():
 
 @app.route('/', methods = ['GET', 'POST'])
 def homepage():
+    #this part will render the homepage template
     return render_template("homepage.html")
 
 

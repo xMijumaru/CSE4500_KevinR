@@ -13,7 +13,8 @@ height: 100% = 100% of the parent's element height.*/
     background-image: linear-gradient(rgba(0,0,0,0.7),
     /*if image is returning an error right click, click
     mark directory as, and change it to resource root*/
-    /*be careful and make sure it is linked up correctly*/
+    /*be careful and make sure it is linked up correctly
+    */
     rgba(0,0,0,0.7)), url('background.jpg');
     background-position: center;
     background-size: cover;
